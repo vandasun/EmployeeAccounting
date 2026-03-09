@@ -1,8 +1,8 @@
-const base = require('./employeeCreate');
-const base = require('./employeeRead');
-const base = require('./employeeUpdate');
+const employeeCreate = require('./employeeCreate');
+const employeeRead = require('./employeeRead');
+const employeeUpdate = require('./employeeUpdate');
 
-const base = require('./referencesRead');
+const referencesRead = require('./referencesRead');
 
 module.exports = {
   getEmployees: employeeRead.getEmployees,
@@ -12,6 +12,6 @@ module.exports = {
   updateEmployee: employeeUpdate.updateEmployee,
   fireEmployee: employeeUpdate.fireEmployee,
   
-  getDepartments: departments.getDepartments,
-  getPositions: positions.getPositions
+  getDepartments: referencesRead.getDepartments,
+  getPositions: referencesRead.getPositions
 };
