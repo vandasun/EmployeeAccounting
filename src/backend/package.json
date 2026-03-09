@@ -1,5 +1,5 @@
 {
-  "name": "hr-backend",
+  "name": "employee-accounting",
   "version": "1.0.0",
   "description": "HR management system backend",
   "main": "server.js",
