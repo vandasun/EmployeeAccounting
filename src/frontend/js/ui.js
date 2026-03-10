@@ -67,8 +67,21 @@ function openModal(employee = null) {
         document.getElementById('lastName').value = employee.last_name || '';
         document.getElementById('firstName').value = employee.first_name || '';
         document.getElementById('patronymic').value = employee.patronymic || '';
-        document.getElementById('birthDate').value = employee.birth_date || '';
-        document.getElementById('hireDate').value = employee.hire_date || '';
+        
+        if (employee.birth_date) {
+            const birthDate = new Date(employee.birth_date);
+            document.getElementById('birthDate').value = birthDate.toISOString().split('T')[0];
+        } else {
+            document.getElementById('birthDate').value = '';
+        }
+        
+        if (employee.hire_date) {
+            const hireDate = new Date(employee.hire_date);
+            document.getElementById('hireDate').value = hireDate.toISOString().split('T')[0];
+        } else {
+            document.getElementById('hireDate').value = '';
+        }
+        
         document.getElementById('passportSeries').value = employee.passport_series || '';
         document.getElementById('passportNumber').value = employee.passport_number || '';
         document.getElementById('phoneNumber').value = employee.phone_number || '';
