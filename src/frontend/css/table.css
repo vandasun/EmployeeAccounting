@@ -1,0 +1,103 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #f8f9fa;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+tr:hover {
+    background: #f5f5f5;
+}
+
+tr.fired {
+    background: #fff3f3;
+    color: #999;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.status-active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-fired {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Добавьте после существующих стилей таблицы */
+
+#employeesTable th,
+#employeesTable td {
+    min-width: 100px;
+}
+
+#employeesTable th:nth-child(1), /* ФИО */
+#employeesTable td:nth-child(1) {
+    min-width: 200px;
+    width: 15%;
+}
+
+#employeesTable th:nth-child(2), /* Дата рождения */
+#employeesTable td:nth-child(2) {
+    width: 8%;
+}
+
+#employeesTable th:nth-child(3), /* Паспорт */
+#employeesTable td:nth-child(3) {
+    width: 8%;
+}
+
+#employeesTable th:nth-child(4), /* Телефон */
+#employeesTable td:nth-child(4) {
+    width: 12%;
+}
+
+#employeesTable th:nth-child(5), /* Отдел */
+#employeesTable td:nth-child(5) {
+    width: 8%;
+}
+
+#employeesTable th:nth-child(6), /* Должность */
+#employeesTable td:nth-child(6) {
+    width: 10%;
+}
+
+#employeesTable th:nth-child(7), /* Зарплата */
+#employeesTable td:nth-child(7) {
+    width: 9%;
+}
+
+#employeesTable th:nth-child(8), /* Дата приема */
+#employeesTable td:nth-child(8) {
+    width: 8%;
+}
+
+#employeesTable th:nth-child(9), /* Статус */
+#employeesTable td:nth-child(9) {
+    width: 7%;
+}
+
+#employeesTable th:nth-child(10), /* Действия */
+#employeesTable td:nth-child(10) {
+    width: 5%;
+    min-width: 80px;
+}
