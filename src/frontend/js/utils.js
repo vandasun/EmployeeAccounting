@@ -21,3 +21,12 @@ function showMessage(text, type) {
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 2000);
 }
+
+function initPhoneMask() {
+    $('#phoneNumber').inputmask('+7 (999) 999-99-99', {
+        showMaskOnHover: false,
+        showMaskOnFocus: true,
+        clearIncomplete: true,
+        placeholder: "+7 (___) ___-__-__"
+    });
+}

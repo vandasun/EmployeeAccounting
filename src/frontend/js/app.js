@@ -9,4 +9,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPositions();
     loadEmployees();
     setupEventListeners();
+    initPhoneMask();
 });
