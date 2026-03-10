@@ -1,7 +1,5 @@
-// Конфигурация
 const API_URL = 'http://localhost:5000/api';
 
-// Состояние приложения
 let departments = [];
 let positions = [];
 
@@ -13,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
 });
 
-// Настройка обработчиков событий
 function setupEventListeners() {
     // Поиск
     document.getElementById('searchBtn').onclick = loadEmployees;
@@ -41,7 +38,6 @@ function setupEventListeners() {
     };
 }
 
-// API Запросы
 async function fetchAPI(url, options = {}) {
     try {
         const response = await fetch(url, options);
@@ -53,7 +49,6 @@ async function fetchAPI(url, options = {}) {
     }
 }
 
-// Загрузка отделов
 async function loadDepartments() {
     const data = await fetchAPI(`${API_URL}/departments`);
     if (data) {
@@ -62,7 +57,6 @@ async function loadDepartments() {
     }
 }
 
-// Загрузка должностей
 async function loadPositions() {
     const data = await fetchAPI(`${API_URL}/positions`);
     if (data) {
@@ -71,7 +65,6 @@ async function loadPositions() {
     }
 }
 
-// Обновление селектов отделов
 function updateDepartmentSelects() {
     const filter = document.getElementById('departmentFilter');
     const form = document.getElementById('departmentSelect');
@@ -85,7 +78,6 @@ function updateDepartmentSelects() {
     });
 }
 
-// Обновление селектов должностей
 function updatePositionSelects() {
     const filter = document.getElementById('positionFilter');
     const form = document.getElementById('positionSelect');
@@ -99,7 +91,6 @@ function updatePositionSelects() {
     });
 }
 
-// Загрузка сотрудников
 async function loadEmployees() {
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = '<tr><td colspan="10" style="text-align: center;">Загрузка...</td></tr>';
@@ -117,7 +108,6 @@ async function loadEmployees() {
     const employees = await fetchAPI(url);
     if (!employees) return;
     
-    // Поиск по ФИО на клиенте
     const filtered = search ? employees.filter(e => {
         const fullName = `${e.last_name} ${e.first_name} ${e.patronymic || ''}`.toLowerCase();
         return fullName.includes(search.toLowerCase());
@@ -126,7 +116,6 @@ async function loadEmployees() {
     renderTable(filtered);
 }
 
-// Отрисовка таблицы
 function renderTable(employees) {
     const tbody = document.getElementById('tableBody');
     
@@ -162,13 +151,10 @@ function renderTable(employees) {
     `).join('');
 }
 
-// Форматирование даты
 function formatDate(dateString) {
     if (!dateString) return '';
     
-    // Если дата в формате ISO (с T и Z)
     if (dateString.includes('T')) {
-        // Берем только первую часть (дату) и разбиваем по T
         const datePart = dateString.split('T')[0];
         return datePart;
     }
@@ -176,13 +162,11 @@ function formatDate(dateString) {
     return dateString;
 }
 
-// Форматирование зарплаты
 function formatSalary(salary) {
     if (!salary) return '';
     return salary.toLocaleString() + ' ₽';
 }
 
-// Сброс фильтров
 function resetFilters() {
     document.getElementById('departmentFilter').value = '';
     document.getElementById('positionFilter').value = '';
@@ -191,7 +175,6 @@ function resetFilters() {
     loadEmployees();
 }
 
-// Работа с модальным окном
 function openModal(employee = null) {
     document.getElementById('modalTitle').textContent = employee ? 'Редактировать' : 'Добавить сотрудника';
     
@@ -220,13 +203,11 @@ function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
 
-// Редактирование
 window.editEmployee = async function(id) {
     const employee = await fetchAPI(`${API_URL}/employees/${id}`);
     if (employee) openModal(employee);
 };
 
-// Увольнение
 window.fireEmployee = async function(id) {
     if (!confirm('Уволить сотрудника?')) return;
     
@@ -240,7 +221,6 @@ window.fireEmployee = async function(id) {
     }
 };
 
-// Сохранение
 async function saveEmployee(e) {
     e.preventDefault();
     
@@ -275,7 +255,6 @@ async function saveEmployee(e) {
     }
 }
 
-// Уведомления
 function showMessage(text, type) {
     const msg = document.createElement('div');
     msg.className = `notification ${type}`;

@@ -10,7 +10,6 @@
     <div class="container">
         <h1>Учет сотрудников</h1>
         
-        <!-- Панель управления -->
         <div class="toolbar">
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Поиск по ФИО...">
@@ -31,13 +30,13 @@
                     <option value="active">Работающие</option>
                     <option value="fired">Уволенные</option>
                 </select>
-                
-                <button class="btn" id="resetBtn">Сброс</button>
-                <button class="btn btn-primary" id="addBtn">+ Добавить</button>
             </div>
+
+            <button class="btn" id="resetBtn">Сброс</button>
+            <button class="btn btn-primary" id="addBtn">+ Добавить</button>
+
         </div>
 
-        <!-- Таблица сотрудников -->
         <table id="employeesTable">
             <thead>
                 <tr>
@@ -59,7 +58,6 @@
         </table>
     </div>
 
-    <!-- Модальное окно -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -100,12 +98,12 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Серия паспорта</label>
-                        <input type="text" id="passportSeries" maxlength="4" placeholder="1234">
+                        <input type="text" id="passportSeries" maxlength="4">
                     </div>
                     
                     <div class="form-group">
                         <label>Номер паспорта</label>
-                        <input type="text" id="passportNumber" maxlength="6" placeholder="123456">
+                        <input type="text" id="passportNumber" maxlength="6">
                     </div>
                 </div>
                 

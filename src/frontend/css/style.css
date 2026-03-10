@@ -40,12 +40,13 @@ h1 {
 }
 
 .btn-primary:hover {
-    background: #1565c0;
+    background: #1565c0; 
 }
 
 .btn-danger {
     background: #dc3545;
     color: white;
+    width: 100%;
 }
 
 .btn-danger:hover {
@@ -220,6 +221,9 @@ tr.fired {
     z-index: 2000;
 }
 
+.notification.success { background: #28a745; }
+.notification.error { background: #dc3545; }
+
 /* Добавьте после существующих стилей таблицы */
 
 /* Фиксированная ширина столбцов */
@@ -248,7 +252,7 @@ tr.fired {
 
 #employeesTable th:nth-child(4), /* Телефон */
 #employeesTable td:nth-child(4) {
-    width: 10%;
+    width: 12%;
 }
 
 #employeesTable th:nth-child(5), /* Отдел */
@@ -263,7 +267,7 @@ tr.fired {
 
 #employeesTable th:nth-child(7), /* Зарплата */
 #employeesTable td:nth-child(7) {
-    width: 8%;
+    width: 9%;
 }
 
 #employeesTable th:nth-child(8), /* Дата приема */
@@ -278,9 +282,6 @@ tr.fired {
 
 #employeesTable th:nth-child(10), /* Действия */
 #employeesTable td:nth-child(10) {
-    width: 3%;
-    min-width: 30px;
+    width: 5%;
+    min-width: 80px;
 }
-
-.notification.success { background: #28a745; }
-.notification.error { background: #dc3545; }
